@@ -19,4 +19,11 @@ export class LabsComponent {
   name = 'Raul';
   lastname = 'Sánchez';
   age = 33;
+  disabled = true;
+  rutaImg  = 'https://www.w3schools.com/howto/img_snow.jpg';
+  person = {
+    name: 'Raul',
+    age: 33,
+    placeToTravel:'https://www.w3schools.com/howto/img_snow.jpg'
+  }
 }

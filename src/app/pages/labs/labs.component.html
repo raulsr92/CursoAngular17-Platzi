@@ -16,3 +16,19 @@
 <p>La suma de 3+9 es: {{3+9}}</p>
 
 <p> Hola, me llamo {{name + " " + lastname}} y tengo {{age + " "}} años. </p>
+
+<hr/>
+
+<img [src]="rutaImg" alt="">
+<input type="text" [value]="name">
+<button [disabled]="disabled">Click on me</button>
+
+<h1>Nombre: </h1>
+<input type="text" [value]="person.name">
+
+<p> Edad: </p>
+<input type="number" [value]="person.age">
+
+<p> Lugar favorito: </p>
+<img [src]="person.placeToTravel" alt="">
+
