@@ -1,34 +1,53 @@
-<h1>Hola, este es mi primer proyecto</h1>
+<div class="container">
+      <h1>Hola, este es mi primer proyecto</h1>
 
-<h2>{{welcome}}</h2>
+      <h2>{{welcome}}</h2>
 
-<ul>
-  <li *ngFor="let task of tasks" >
-    {{task}}
-  </li>
-</ul>
+      <ul>
+        <li *ngFor="let task of tasks" >
+          {{task}}
+        </li>
+      </ul>
 
-<hr/>
+      <hr/>
 
-<h2>
-  {{ "Mi nombre es Raúl - ".repeat(4)}}
-</h2>
-<p>La suma de 3+9 es: {{3+9}}</p>
+      <h2>
+        {{ "Mi nombre es Raúl - ".repeat(4)}}
+      </h2>
+      <p>La suma de 3+9 es: {{3+9}}</p>
 
-<p> Hola, me llamo {{name + " " + lastname}} y tengo {{age + " "}} años. </p>
+      <p> Hola, me llamo {{name + " " + lastname}} y tengo {{age + " "}} años. </p>
 
-<hr/>
+      <hr/>
 
-<img [src]="rutaImg" alt="">
-<input type="text" [value]="name">
-<button [disabled]="disabled">Click on me</button>
+      <img [src]="rutaImg" alt="">
+      <input type="text" [value]="name">
+      <button [disabled]="disabled">Click on me</button>
 
-<h1>Nombre: </h1>
-<input type="text" [value]="person.name">
+      <h1>Nombre: </h1>
+      <input type="text" [value]="person.name">
 
-<p> Edad: </p>
-<input type="number" [value]="person.age">
+      <p> Edad: </p>
+      <input type="number" [value]="person.age">
 
-<p> Lugar favorito: </p>
-<img [src]="person.placeToTravel" alt="">
+      <p> Lugar favorito: </p>
+      <img [src]="person.placeToTravel" alt="">
 
+      <hr/>
+
+      <div class="btn-container">
+
+        <button [class]="btnMainClass" (click)="clickHandler()"> Registrar </button>
+
+        <button [class]="btnMainClass" (dblclick)="clickHandler()"> Doble Click </button>
+
+      </div>
+
+      <h2>Probando el evento CHANGE</h2>
+
+      <div>
+        <label for="nombre">Nombre </label>
+        <input id="nombre" type="text" (change)="inputHandler($event)">
+      </div>
+
+</div>

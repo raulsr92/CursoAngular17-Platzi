@@ -1,0 +1,26 @@
+.container{
+  padding: 10px;
+  background-color: antiquewhite;
+}
+
+.btn-container{
+  display: flex;
+  column-gap: 10px;
+}
+
+
+.btn-main{
+  color: white;
+  background-color: #7E99A3;
+  border: 0;
+  padding: 12px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+.btn-main:hover{
+  background-color: #4C585B;
+}

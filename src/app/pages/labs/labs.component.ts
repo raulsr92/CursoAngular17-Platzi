@@ -25,5 +25,20 @@ export class LabsComponent {
     name: 'Raul',
     age: 33,
     placeToTravel:'https://www.w3schools.com/howto/img_snow.jpg'
+  };
+
+  clickHandler(){
+    alert("Se ha registrado su solicitud.")
+  }
+
+  btnMainClass = 'btn-main';
+
+  inputHandler(event:Event){
+    console.log(event)
+
+    const inputElement = event.target as HTMLInputElement;
+
+    alert(inputElement.value)
+
   }
 }
