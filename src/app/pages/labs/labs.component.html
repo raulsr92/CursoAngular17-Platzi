@@ -50,4 +50,18 @@
         <input id="nombre" type="text" (change)="inputHandler($event)">
       </div>
 
+      <h2>Probando el evento KEYDOWN</h2>
+
+      <div>
+        <label for="nombre">Nombre </label>
+        <input id="nombre" type="text" [value]="person.name" (keydown)="keyDownHandler($event) ">
+      </div>
+
+      <h2>Probando el evento KEYDOWN con el modificador KEY</h2>
+
+      <div>
+        <label for="nombre">Apellido </label>
+        <input id="nombre" type="text"  (keydown.enter)="keyDownHandler2($event)">
+      </div>
+
 </div>

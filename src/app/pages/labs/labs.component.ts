@@ -39,6 +39,24 @@ export class LabsComponent {
     const inputElement = event.target as HTMLInputElement;
 
     alert(inputElement.value)
+  }
+
+  keyDownHandler(event:KeyboardEvent){
+    console.log(event)
+
+    const input = event.target as HTMLInputElement;
+
+
+    alert(`Usted ha presionado ${event.key}`)
 
   }
+
+
+  keyDownHandler2(event:Event){
+    console.log(event)
+
+    alert(`Usted ha presionado la tecla ENTER`)
+
+  }
+
 }
