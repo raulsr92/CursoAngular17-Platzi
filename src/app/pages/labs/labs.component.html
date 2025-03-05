@@ -64,4 +64,17 @@
         <input id="nombre" type="text"  (keydown.enter)="keyDownHandler2($event)">
       </div>
 
+
+      <h2>Trabajando con Signal de Angular</h2>
+
+      <p> Hola, me llamo {{ name2()}}. Soy de Perú </p>
+
+
+      <div>
+        <label for="nombre">Ingrese su nombre: </label>
+        <input id="nombre" type="text" [value]="name2()" (change)="actualizarInputValue($event)">
+      </div>
+
+      <p> El nuevo valor: {{ name2()}}.</p>
+
 </div>

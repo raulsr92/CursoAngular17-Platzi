@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 
@@ -17,6 +17,9 @@ export class LabsComponent {
     "Crear componentes"
   ];
   name = 'Raul';
+
+  name2 = signal('Raul Adolfo');
+
   lastname = 'Sánchez';
   age = 33;
   disabled = true;
@@ -56,6 +59,21 @@ export class LabsComponent {
     console.log(event)
 
     alert(`Usted ha presionado la tecla ENTER`)
+
+  }
+
+
+  actualizarInputValue(event:Event){
+
+    console.log(event)
+
+    const input = event.target as HTMLInputElement;
+
+    console.log(input.value)
+
+    const newValue = input.value;
+
+    this.name2.set(newValue);
 
   }
 
