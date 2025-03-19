@@ -62,11 +62,47 @@ export class HomeComponent {
   }
 
 
+
+
+
   deleteTask(index: number){
-1
+
     this.tasks.update((tasks) => tasks.filter((task, posicion)=>posicion !== index
 
     ) );
 
+  }
+
+  updateTask(tarea: Task, state:boolean, index:number){
+    const tareaActualizada = {
+      id: Date.now(),
+      title: tarea.title,
+      completed: state
+    }
+
+    console.log('Lista de tareas antes de actualizar:',this.tasks())
+    console.log('Tarea actualizada:',tareaActualizada)
+    console.log('Tarea a actualizar',this.tasks()[index])
+
+    //this.tasks()[index] = updateTask;
+    this.tasks.update((tasks) => tasks.map((tareita, posicion) => posicion == index ? tareaActualizada:tareita ));
+
+  }
+
+  taskFinished(event:Event, index:number, task: Task){
+
+    console.log(event)
+
+    const input = event.target as HTMLInputElement;
+    const checkedValue = input.checked
+
+    console.log(input)
+    console.log('Checkbox marcado:',checkedValue)
+    console.log('Índice de la tarea:',index)
+    console.log('Tarea antes de actualizar:',task)
+
+    this.updateTask(task,checkedValue,index)
+
+    console.log('Lista de tareas después de actualizar:',this.tasks())
   }
 }
