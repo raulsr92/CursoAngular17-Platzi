@@ -75,8 +75,7 @@ export class HomeComponent {
 
   updateTask(tarea: Task, state:boolean, index:number){
     const tareaActualizada = {
-      id: Date.now(),
-      title: tarea.title,
+      ...tarea,
       completed: state
     }
 
