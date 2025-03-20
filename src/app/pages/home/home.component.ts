@@ -105,4 +105,21 @@ export class HomeComponent {
 
     console.log('Lista de tareas después de actualizar:',this.tasks())
   }
+
+  // Método creado para la solución del profesor (clase 13)
+
+  updateTask2(index:number){
+    this.tasks.update((tasks) => {
+      return tasks.map((tareita, posicion) => {
+        if(posicion == index){
+          return {
+            ...tareita,
+            completed: !tareita.completed // negando el estado actual de la tarea cambiamos de false a true o viceversa
+          }
+        }
+        return tareita;
+      })
+    });
+  }
+
 }
