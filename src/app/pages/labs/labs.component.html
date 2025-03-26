@@ -27,13 +27,13 @@
       <button [disabled]="disabled">Click on me</button>
 
       <h1>Nombre: </h1>
-      <input type="text" [value]="person.name">
+      <input type="text" [value]="person().name">
 
       <p> Edad: </p>
-      <input type="number" [value]="person.age">
+      <input type="number" [value]="person().age">
 
       <p> Lugar favorito: </p>
-      <img [src]="person.placeToTravel" alt="">
+      <img [src]="person().placeToTravel" alt="">
 
       <hr/>
 
@@ -56,7 +56,7 @@
 
       <div>
         <label for="nombre">Nombre </label>
-        <input id="nombre" type="text" [value]="person.name" (keydown)="keyDownHandler($event) ">
+        <input id="nombre" type="text" [value]="person().name" (keydown)="keyDownHandler($event) ">
       </div>
 
       <h2>Probando el evento KEYDOWN con el modificador KEY</h2>
@@ -78,5 +78,50 @@
       </div>
 
       <p> El nuevo valor: {{ name2()}}.</p>
+
+      <hr/>
+
+      <h2>Uso de ngIf</h2>
+
+      <h3>Condicional ngIf variables</h3>
+
+      <div *ngIf=" number1 === number2">
+        My content
+      </div>
+
+      <hr/>
+
+      <h3>Condicional ngIf con variables signal</h3>
+
+      <div *ngIf=" name2() === 'Raul Adolfo'">
+        Nombre correcto
+      </div>
+
+      <hr/>
+
+      <h3>Condicional ngIf con objetos signal</h3>
+
+      <div *ngIf=" person().name === 'Raul' && person().age > 18">
+
+          Nombre ingresado correctamente y es mayor de edad.
+
+      </div>
+
+      <hr/>
+
+      <h3>Condicional ngIf con objetos uso de ELSE</h3>
+
+
+      <div>
+        <label for="nombre">Ingrese su edad: </label>
+        <input id="nombre" type="number" [value]="person().age" (change)="actualizarEdad($event)">
+      </div>
+
+      <div *ngIf=" person().name === 'Raul' && person().age > 18; else elseBlock">
+
+          Nombre ingresado correctamente y es mayor de edad.
+
+      </div>
+      <ng-template #elseBlock> Usted ha ingresado mal su nombre o es menor de edad </ng-template>
 
 </div>

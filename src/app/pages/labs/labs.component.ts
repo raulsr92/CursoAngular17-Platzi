@@ -26,11 +26,12 @@ export class LabsComponent {
   age = 33;
   disabled = true;
   rutaImg  = 'https://www.w3schools.com/howto/img_snow.jpg';
-  person = {
+
+  person = signal( {
     name: 'Raul',
-    age: 33,
+    age: 17,
     placeToTravel:'https://www.w3schools.com/howto/img_snow.jpg'
-  };
+  });
 
   clickHandler(){
     alert("Se ha registrado su solicitud.")
@@ -56,14 +57,12 @@ export class LabsComponent {
 
   }
 
-
   keyDownHandler2(event:Event){
     console.log(event)
 
     alert(`Usted ha presionado la tecla ENTER`)
 
   }
-
 
   actualizarInputValue(event:Event){
 
@@ -79,4 +78,19 @@ export class LabsComponent {
 
   }
 
+  actualizarEdad(event:Event){
+    const input = event.target as HTMLInputElement;
+    const newAge = input.value;
+
+    this.person.update((personaActual)=> {
+      return {
+        ...personaActual, age:  parseInt(newAge,10)
+      };
+    })
+  }
+
+
+  number1 = 20;
+
+  number2 = 10;
 }
